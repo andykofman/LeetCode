@@ -57,11 +57,27 @@ public:
             initialize empty hashmap
             */
             unordered_map <int, int> seen;
-            for (int i =0; i<nums.size(); i++){
-                int complaiment = target - nums [i];
-                if (seen.find(complaiment) != seen.end()){
-                    return {seen[complaiment],i};
+            // iterate through each element in the nums array
+            for (int i =0; i<nums.size(); i++)
+            {
+                // Calaculate the complement needed to reach the target
+                //compliment = target - current value
+                int complement = target - nums [i];
+
+                //Check if the complement value exists in the seen hashmap
+                //seen.find(complement) returns an iterator to the element if found
+                //seen.end() reurns an iterator to the end of the container if not found
+
+                if (seen.find(complement) != seen.end())
+                {
+                    // IF complement is found, return the indices:
+                    //1- the index of the complement stored in the hashtable
+                    //2- the current index (i)
+                    return {seen[complement],i};
                 }
+                // if complement is Not found, store the number and its index in the hashtable
+                // Key: current number (nums[i])
+                // value: current index
             seen[nums[i]] =i;
             }
 
