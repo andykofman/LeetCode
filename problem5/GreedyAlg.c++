@@ -23,7 +23,32 @@ int greedyCoinChange(vector <int> coins, int amount){
             count ++;
 
         }
+
+    }
     return (amount == 0)? count: -1;
+}
+
+int main (){
+
+    int n, target;
+    cout << "Enter Number of Coins:" ;
+    cin >> n;
+
+    vector <int> coins(n);
+    cout << "Enter the coin Values: ";
+    for (int i =0; i< n; i++){
+        cin >> coins[i];
     }
 
+    cout << "Enter the target amount: " ;
+    cin >> target;
+
+    int result = greedyCoinChange(coins, target);
+    if (result !=-1){
+        cout << "Minimum no. of coins needed: " <<
+        result <<endl;
+        
+    }
+
+   return 0; 
 }
