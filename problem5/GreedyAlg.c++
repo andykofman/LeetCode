@@ -1,3 +1,7 @@
+/*
+ (Canonical Greedy Problem)
+ */
+
 #include <vector>
 #include <iostream>
 #include <algorithm>
@@ -47,7 +51,7 @@ int main (){
     if (result !=-1){
         cout << "Minimum no. of coins needed: " <<
         result <<endl;
-        
+
     }
 
    return 0; 
